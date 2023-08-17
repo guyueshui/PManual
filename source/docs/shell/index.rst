@@ -5,6 +5,7 @@ Shell命令
     :maxdepth: 1
 
     shell基础
+    bash-arithmetic
     cut
     ffmpeg
     find
