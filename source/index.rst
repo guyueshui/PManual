@@ -18,6 +18,7 @@ Yychi's Manual
 
    docs/git/index
    docs/shell/index
+   docs/cpp-note/index
    docs/uncategorized/index
 
 
