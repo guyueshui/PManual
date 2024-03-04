@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "Yychi's Manual"
-copyright = '2023, yychi'
+copyright = '2024, yychi'
 author = 'yychi'
 release = 'v0'
 
