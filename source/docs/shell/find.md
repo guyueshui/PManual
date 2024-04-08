@@ -54,3 +54,53 @@ find . -regextype posix-extended -regex ".*\.(log|aux|blg)"
 - `find . -newer file1 ! file2` - 查找比 file1 新但比 file2 旧的文件
 - `find -type d -empty | xargs -n 1 rmdir` - 批量删除当前目录下的空文件夹
 - `find -tyle l -exec ls -l {} +` - 找出当前文件夹下损坏的软连接
+
+更多示例
+--------
+
+参考：http://linux.51yip.com/search/find
+```bash
+andy@ubuntu:~$ find ./ -name "null_*" -exec basename {} \; | sort   #搜索文件，并只显示文件名，以升序排列。
+null_0
+null_1
+null_2
+null_3
+null_4
+null_5
+null_6
+null_7
+null_8
+null_9
+```
+
+```bash
+#匹配多个条件中的一个，采用OR条件操作
+sugar@ubuntu:~/app/shell$ find . \( -name "*.sh" -o -name "*.txt" \) -print 
+./cutTest.sh
+./alertusage.sh
+./debugmethod.sh
+./debug.sh
+./test.txt
+./plusTest.sh
+./getDate.sh
+./noPasswd.sh
+```
+
+```bash
+# 寻找 当前目录 修改时间在 2019-01-24 的文件
+find . -type f -newermt 2019-01-24 ! -newermt 2019-01-25 
+
+# 寻找 当前目录 修改时间在 2019-01-24 08:00 ~ 2019-01-25 08:00 的文件
+find . -type f -newermt "2019-01-24 08:00" ! -newermt "2019-01-25 08:00"
+```
+
+```bash
+# --max-depth 对查找文件的深度---及层数设定。
+[root@localhost etc]# find . -maxdepth 4 -name "*.txt"
+./pki/nssdb/pkcs11.txt
+./brltty/Input/ba/all.txt
+./brltty/Input/bd/all.txt
+./brltty/Input/bl/18.txt
+./brltty/Input/bl/40_m20_m40.txt
+./brltty/Input/ec/all.txt
+```
