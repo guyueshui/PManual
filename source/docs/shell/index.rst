@@ -1,10 +1,11 @@
 Shell命令
-========
+=========
 
 .. toctree::
     :maxdepth: 1
 
     shell基础
+    shell-script
     bash-arithmetic
     cut
     ffmpeg

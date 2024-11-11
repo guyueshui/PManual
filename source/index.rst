@@ -17,6 +17,7 @@ Yychi's Manual
    :caption: Contents:
 
    docs/git/index
+   docs/linux/index
    docs/shell/index
    docs/cpp-note/index
    docs/uncategorized/index
