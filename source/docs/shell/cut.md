@@ -1,4 +1,4 @@
-## Command `cut`
+## `cut` 按列剪切文本
 
 ```bash
 $ whatis cut

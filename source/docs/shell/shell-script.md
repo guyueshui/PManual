@@ -24,3 +24,24 @@ fi
 
 PS: 选项可以合并到一条 set 语句：`set -ex`.
 PPS: 也可以执行`bash -ex some-script.sh`等价于在脚本里面写`set -ex`.
+
+♻️循环执行一个命令
+-----------------
+
+几种写法，参考[此处](https://www.cnblogs.com/yychuyu/p/12967366.html)。
+
+```bash
+while ! ping -c3 baidu.com; do
+    sleep 2
+done
+echo succeed
+```
+
+`!`可以直接判否，判断一个命令是否执行成功。
+
+```bash
+until ping -c3 baidu.com; do
+    sleep 2
+done
+echo succeed
+```

@@ -1,4 +1,4 @@
-## Command `grep`
+## `grep` 文本搜索利器
 
 最基本用法：
 ```bash
