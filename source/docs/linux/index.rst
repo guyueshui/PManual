@@ -6,3 +6,5 @@ Linux 使用指南
 
     basic
     beautify
+    archlinux-keyring
+    extend-swap

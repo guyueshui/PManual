@@ -35,6 +35,31 @@ mount | column -t           # 查看各分区的挂载状态
 du -sh <目录名>              # 查看指定目录的大小
 ```
 
+**清理缓存**
+
+```bash
+$ free -h
+               total        used        free      shared  buff/cache   available
+内存：      7.7Gi       4.5Gi       231Mi       699Mi       2.9Gi       2.2Gi
+交换：      8.1Gi       2.7Gi       5.5Gi
+```
+
+free 命令中列出的几个项目中，available 是程序可申请的内存，其他几项如 shared，buff/cache 如何释放掉呢？
+
+```bash
+# clear cache
+sync; echo 1 > /proc/sys/vm/drop_caches
+
+# clear swap
+swapoff -a
+swapon -a
+```
+
+参考：
+
+- https://colobu.com/2015/10/31/How-to-Clear-RAM-Memory-Cache-Buffer-and-Swap-Space-on-Linux/
+- https://unix.stackexchange.com/questions/87908/how-do-you-empty-the-buffers-and-cache-on-a-linux-system
+
 ## 网络状态
 
 ```bash
@@ -110,3 +135,20 @@ root     pts/2        2024-02-27 16:18 (10.*.*.2)
 pkill -9 -t pts/0
 ```
 踢掉该用户。
+
+## 查看系统日志
+
+Journal
+
+```bash
+# 查看boot日志
+journalctl -b
+
+# 查看上一次的boot日志，同理-2/3/4...
+journalctl -b -1
+
+# 列出所有启动日志
+journalctl --list-boots
+```
+
+cf. https://www.linode.com/docs/guides/how-to-use-journalctl/
